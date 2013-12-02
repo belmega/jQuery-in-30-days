@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appending Content</title>
+        <meta charset="UTF-8">
+        <style>
+            article {
+                width: 600px;
+                margin: auto;
+            }
+            blockquote.co {
+                float: right;
+                background: #e3e3e3;
+                font-size: 2em;
+                width: 35%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <article>
+            
+            <h1>My Awesome Post</h1>
+            
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+            </p>
+            <p>
+                <span class="co">Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labo<span class="co">Hello from the JavaScript</span>re et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </p>
+
+            
+        </article>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+        
+        <script>
+            (function() {
+                
+                var co = $('span.co').each(function(){
+                    var $this = $(this);
+                    $('<blockquote></blockquote>', {
+                        class: 'co',
+                        text: $this.text()
+                    }).prependTo( $this.closest('p') );
+                     
+                });
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

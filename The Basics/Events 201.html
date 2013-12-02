@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events 201</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style(Events 201).css" />
+    </head>
+    <body>
+        
+        <dl>
+            <dt>What Are Your Hours?</dt>
+            <dd>We Are Open 24/7.</dd>
+            <dt>What Are Your Hours?</dt>
+            <dd>We Are Open 24/7.</dd>
+            <dt>What Are Your Hours?</dt>
+            <dd>We Are Open 24/7.</dd>
+            <dt>What Are Your Hours?</dt>
+            <dd>We Are Open 24/7.</dd>
+            <dt>What Are Your Hours?</dt>
+            <dd>We Are Open 24/7.</dd>
+        </dl>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+        
+        <script>
+            
+            (function() {
+                
+                $('dd').filter(':nth-child(n+4)').addClass('hide');
+                
+                $('dl').on('mouseenter', 'dt', function() {
+                    $(this)
+                            .next()
+                                .slideDown(200)
+                                .siblings('dd')
+                                    .slideUp(200);
+                });
+                
+            })();
+            
+        </script>
+        
+    </body>
+</html>
